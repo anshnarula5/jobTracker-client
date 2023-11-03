@@ -12,3 +12,35 @@ export interface Application {
     currentStatus? : any;
     currentStatusDate : Date
   }
+
+  export interface ChartOptions {
+    chart: {
+      type: 'bar';
+      height: number;
+    };
+    plotOptions: {
+      bar: {
+        borderRadius: number;
+        horizontal: boolean;
+      };
+    };
+    dataLabels: {
+      enabled: boolean;
+    };
+    xaxis: {
+      categories: any[];
+    };
+    responsive: {
+      breakpoint: number;
+      options: {
+        chart: {
+          type: 'bar';
+          width: number;
+        };
+        legend: {
+          position: string;
+        };
+      };
+    }[];
+  }
+  

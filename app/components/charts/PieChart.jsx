@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import ReactApexChart from 'react-apexcharts';
 
-const PieChart = ({data} : any) => {
-    const series = [...data.map((d:any) => d.count)]
+const PieChart = ({data}) => {
+    const series = [...data.map((d) => d.count)]
     const [options, setOptions] = useState({
       chart: {
         width: 380,
         type: "pie",
       },
-      labels: [...data.map((d:any) => d.status)],
+      labels: [...data.map((d) => d.status)],
       responsive: [{
         breakpoint: 600,
         options: {

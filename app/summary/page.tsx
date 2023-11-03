@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import withAuth from '../rest/withAuth'
 import { getApplicationsCount, getCompanyDistribution, getReferralAnalysis, getStatusDistribution } from '../rest/apiService'
 import { useSelector } from 'react-redux'
-import PieChart from '../components/charts/PieChart';
-import ReferralAnalysisChart from '../components/charts/ReferralAnalysisChart';
+import PieChart from '../components/charts/PieChart.jsx';
+import ReferralAnalysisChart from '../components/charts/ReferralAnalysisChart.jsx';
 import BarChart from '../components/charts/BarChart';
 import Loading from '../components/Loading';
 
