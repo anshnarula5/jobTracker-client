@@ -6,7 +6,6 @@ import Image from "next/image"
 
 const Home = () => {
   const userInfo = useSelector((state: any) => state.authReducer.value)
-  console.log(userInfo)
   return (
     <main className="flex xl:flex-row flex-col gap-5 relative max-w-[1440px] md:mx-auto">
       <div className="flex-1 md:pt-12 pt-6 padding-x  md:mx-auto mx-6">

@@ -50,7 +50,6 @@ export const updateApplicationStatus = async (id: number, newStatus: string, tok
   })
 }
 export const deleteApplication = async (id: number, token: string) => {
-  console.log(id)
   const response = await fetch(URI + `/api/application/delete/${id}`, {
     method: "DELETE",
     mode: "cors",

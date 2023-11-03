@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import ReactApexChart from 'react-apexcharts';
 
 const ReferralAnalysisChart = ({data} : any) => {
-    console.log(data)
     const series = [data.successfulCount, data.unsuccessfulCount]
     const [options, setOptions] = useState({
       chart: {

@@ -13,7 +13,6 @@ const Register = ({ userData, setUserData, setIsLogin } : any) => {
   const handleSubmit = async(e : any) => {
     e.preventDefault()
     try {
-      console.log(userData)
       const { data } = await axios.post("http://localhost:5000/api/auth/register", userData);
       const { data: resData } = data;
       const { email: mail, firstName, id, lastName, token: authToken } = resData;
@@ -27,7 +26,6 @@ const Register = ({ userData, setUserData, setIsLogin } : any) => {
       }))
       dispatch(logIn(saveData))
     } catch (error: any) {
-      console.log(error)
       if (error.response.status === 409) {
         dispatch(createAlert({
           message: "Email already exists, try login.",

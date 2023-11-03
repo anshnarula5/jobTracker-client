@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import ReactApexChart from 'react-apexcharts';
 
 const PieChart = ({data} : any) => {
-    console.log(data)
     const series = [...data.map((d:any) => d.count)]
     const [options, setOptions] = useState({
       chart: {

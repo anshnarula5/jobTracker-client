@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import { convertDate } from '../utils'
-import { addNewApplication, getCompanyLogo } from '../rest/apiService'
+import { addNewApplication} from '../rest/apiService'
 import SubmitButton from './buttons/SubmitButton'
 import { useDispatch, useSelector } from 'react-redux'
 import { createAlert } from '@/redux/features/alertSlice'
@@ -43,9 +43,7 @@ const NewApplicationForm = ({ isFormOpen, status, setStatusCode, setNewApplicati
       return;
     }
     const response = await addNewApplication(formData, authtoken)
-    console.log(formData)
     const code = response.statusCode;
-    console.log(response)
     setStatusCode(code)
     dispatch(createAlert({
       message : "Added new application",

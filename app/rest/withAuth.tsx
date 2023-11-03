@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 const withAuth = (WrappedComponent : any) => {
   const AuthComponent = (props : any) => {
-    console.log("IN with auth")
     const router = useRouter();
     const isLoggedIn = useSelector((state:any) => state.authReducer.value?.authToken);
     useEffect(() => {

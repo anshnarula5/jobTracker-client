@@ -35,7 +35,6 @@ const Login = ({ userData, setUserData, setIsLogin }: any) => {
       }))
       dispatch(logIn(saveData))
     } catch (error: any) {
-      console.log(error)
       if (error.response.status === 401) {
         dispatch(createAlert({
           message: "Wrong credentials.",

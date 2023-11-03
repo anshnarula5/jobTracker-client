@@ -87,7 +87,9 @@ const Dashboard = () => {
         setIntApplications([application, ...intApplications])
         break;
       case "delete":
+        console.log("before")
         await deleteApplication(jobId, authtoken)
+        console.log("after")
         dispatch(createAlert({
           message: "Deleted   application",
           type: "success"
@@ -123,10 +125,7 @@ const Dashboard = () => {
       default:
         break;
     }
-    console.log("Updating")
     if (status != "delete") await updateApplicationStatus(jobId, StatusList[status], authtoken)
-    console.log("Done")
-    setIsMoving(false)
   }
 
   useEffect(() => {
@@ -139,7 +138,6 @@ const Dashboard = () => {
     [updateStatus])
 
   function handleDragEnd(event: any) {
-    // console.log("END", event)
     setIsMoving(false)
     const startingCol = event.active.data.current?.parent ?? "";
     const updatedApplication = event.active.data.current?.application ?? {};
@@ -152,11 +150,9 @@ const Dashboard = () => {
       parent: startingCol,
       application: updatedApplication
     })
-    console.log("Job Id : " + jobId + " From : " + startingCol + " TO : " + endingCol)
   }
   function handleDragStart(event: any) {
     setIsMoving(true)
-    // console.log("START", event)
   }
 
 

@@ -22,7 +22,6 @@ const Summary = () => {
     const referral = await getReferralAnalysis(authtoken)
     const count = await getApplicationsCount(authtoken)
     const companyData = await getCompanyDistribution(authtoken)
-    console.log(referral)
     setStatusDistribution(status)
     setReferralAnalysis(referral)
     setApplicationsCount(count)
