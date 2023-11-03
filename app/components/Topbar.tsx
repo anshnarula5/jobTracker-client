@@ -1,10 +1,7 @@
 "use client"
 import Link from 'next/link'
 import React from 'react'
-import SidebarButton from './buttons/SidebarButton'
 import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch } from '@/redux/store'
-import { redirect } from 'next/navigation'
 import { logOut } from '@/redux/features/authSlice'
 import { createAlert } from '@/redux/features/alertSlice'
 import Image from 'next/image'
