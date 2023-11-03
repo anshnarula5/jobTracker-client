@@ -8,7 +8,7 @@ const withAuth = (WrappedComponent : any) => {
     const router = useRouter();
     const isLoggedIn = useSelector((state:any) => state.authReducer.value?.authToken);
     useEffect(() => {
-      if (typeof globalThis.window !== 'undefined') {
+      if (typeof globalThis !== 'undefined' && typeof window === 'object') {
         if (!isLoggedIn) {
           redirect('/auth');
         }
