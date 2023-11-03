@@ -12,7 +12,7 @@ type AuthState = {
   authToken: any;
 };
 
-const storedUser = localStorage.getItem('USER');
+const storedUser = typeof window !== 'undefined' ? localStorage.getItem('USER') : null;
 const initialState: InitialState = {
   value: storedUser ? JSON.parse(storedUser) : { name: '', id: 0, email: '', authToken: null },
   isLoading: false,
